@@ -1,38 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;500&family=Merriweather:wght@300;400;700&display=swap");
+
+body,
+html {
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-font: "Merriweather", serif;
+  --secondary-font: "Merriweather Sans", sans-serif;
+}
+
 .App {
-  text-align: center;
+  height: 100vh;
+  width: 100%;
+  background-image: url("../public/images/stacked-waves.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #edf2ef;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+  display: flex;
+  height: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.left-div {
+  width: 50%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  padding: 0px 20px;
+}
+
+.sub-head h1 {
+  font-family: var(--primary-font);
+  font-weight: 100;
+  font-size: 80px;
+  margin: 0;
+  color: #032b43;
+  line-height: 90px;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 100%;
+  height: fit-content;
+  margin-top: 50px;
 }
 
-.App-link {
-  color: #61dafb;
+.header img {
+  height: 100px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.main-head {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.sub-head {
+  display: flex;
+  flex-direction: column;
+}
+
+.sub-head p {
+  margin: 0;
+  font-size: 24px;
+}
+
+.search-cont {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 10px;
+}
+
+.input-box {
+  width: 65%;
+  height: 30px;
+  border-radius: 50px;
+  border: none;
+  outline: none;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  font-family: var(--secondary-font);
+  font-size: 16px;
+  padding: 10px 15px;
+  margin: 20px 10px;
+}
+
+.search-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  transition: 0.3s;
+  border: none;
+  outline: none;
+}
+
+.search-btn:hover {
+  background-color: #ff7b7d;
+  transition: 0.3s;
+}
+
+.search-btn img {
+  width: 25px;
+}
+
+.right-div {
+  width: 50%;
 }
