@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;500&family=Merriweather:wght@300;400;700&display=swap");
+
+:root {
+  --primary-font: "Merriweather", serif;
+  --secondary-font: "Merriweather Sans", sans-serif;
+}
+
+.card-cont {
+  height: 250px;
+  width: 100%;
+  border-radius: 6px;
+  padding: 10px 20px;
+  font-family: var(--secondary-font);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  backdrop-filter: blur(5px) saturate(200%);
+  -webkit-backdrop-filter: blur(5px) saturate(200%);
+  background-color: rgba(255, 255, 255, 0.57);
+  border-radius: 12px;
+  border: 1px solid rgba(209, 213, 219, 0.3);
+  display: flex;
+  flex-direction: column;
+}
+
+.card-cont .card-head {
+  padding: 10px;
+  border-bottom: rgb(0, 0, 0, 0.1) 1px solid;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-cont .card-head h2 {
+  margin: 0;
+  font-weight: 100;
+  text-transform: capitalize;
+}
+
+.card-body {
+  display: flex;
+}
+
+.card-body h4 {
+  font-family: var(--secondary-font);
+  font-size: 15px;
+  font-weight: 100;
+  margin: 0;
+  font-weight: 500;
+  margin: 10px;
+}
+
+.card-body p {
+  font-family: var(--secondary-font);
+  font-size: 15px;
+  font-weight: 100;
+  margin: 10px;
+}
+
+.card-left {
+  width: 50%;
+  padding: 20px 0px;
+  border-right: rgb(0, 0, 0, 0.1) 1px solid;
+}
+
+.card-right {
+  width: 50%;
+  padding: 20px 0px;
+}
+
+.card-left .parameter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-right .parameter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (max-width: 640px) {
+  .card-left h4 {
+    font-size: 12px;
+  }
+
+  .card-left p {
+    font-size: 12px;
+  }
+
+  .card-right h4 {
+    font-size: 12px;
+  }
+
+  .card-right p {
+    font-size: 12px;
+  }
+}
