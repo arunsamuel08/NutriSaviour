@@ -25,9 +25,10 @@ html {
 }
 
 .left-div {
-  width: 50%;
+  width: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
   padding: 0px 20px;
 }
@@ -49,6 +50,11 @@ html {
   width: 100%;
   height: fit-content;
   margin-top: 50px;
+  transition: top 0.5s ease;
+}
+
+.header-visible {
+  transform: translateY(-100%);
 }
 
 .header img {
@@ -74,21 +80,23 @@ html {
 .search-cont {
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin: 10px 10px;
+  justify-content: space-between;
+  width: 100%;
+  margin: 20px 0px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-radius: 50px;
+  background-color: #fff;
 }
 
 .input-box {
-  width: 65%;
+  width: 90%;
   height: 30px;
   border-radius: 50px;
   border: none;
   outline: none;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   font-family: var(--secondary-font);
   font-size: 16px;
   padding: 10px 15px;
-  margin: 20px 10px;
 }
 
 .search-btn {
@@ -96,7 +104,7 @@ html {
   height: 50px;
   border-radius: 50%;
   background-color: #fff;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  /* box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; */
   transition: 0.3s;
   border: none;
   outline: none;
@@ -108,9 +116,72 @@ html {
 }
 
 .search-btn img {
-  width: 25px;
+  width: 20px;
 }
 
-.right-div {
+.emptywarn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  font-family: var(--secondary-font);
+  color: #d62246;
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  font-family: var(--secondary-font);
+  color: #d62246;
+}
+
+.errormsg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  font-family: var(--secondary-font);
+  color: #d62246;
+}
+
+.card-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  transform: translateY(20px);
+}
+
+/* .right-div {
   width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+} */
+
+@media (max-width: 640px) {
+  .App {
+    background-image: none;
+    background-color: #edf2ef;
+  }
+
+  .left-div {
+    padding: 0;
+  }
+  .sub-head h1 {
+    font-size: 42px;
+    line-height: 40px;
+  }
+
+  .sub-head p {
+    font-size: 12px;
+  }
+
+  .main-head img {
+    height: 70px;
+  }
 }
