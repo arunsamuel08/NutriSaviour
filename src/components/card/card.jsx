@@ -1,9 +1,36 @@
 import "./card.css";
+import { motion } from "framer-motion";
 
 const Card = props => {
+  const dropIn = {
+    hidden: {
+      y: "100vh",
+      opacity: 0,
+    },
+    visible: {
+      y: "0",
+      opacity: "1",
+      transition: {
+        duration: 0.1,
+        type: "spring",
+        damping: 25,
+        stiffness: 100,
+      },
+    },
+    exit: {
+      y: "-100vh",
+      opacity: "0",
+    },
+  };
   return (
     <>
-      <div className="card-cont">
+      <motion.div
+        className="card-cont"
+        variants={dropIn}
+        initial="hidden"
+        animate="visible"
+        exit="exit"
+      >
         <div className="card-head">
           <h2>{props.name}</h2>
           <h2>{props.serve_size + " gm"}</h2>
@@ -52,7 +79,7 @@ const Card = props => {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </>
   );
 };

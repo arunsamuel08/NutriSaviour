@@ -17,9 +17,11 @@ html {
   background-repeat: no-repeat;
   background-size: cover;
   background-color: #edf2ef;
+  overflow: hidden;
 }
 
 .container {
+  position: relative;
   display: flex;
   height: 100%;
 }
