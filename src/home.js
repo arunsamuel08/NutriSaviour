@@ -98,11 +98,15 @@ function Home() {
     <div className="App">
       {openModal && <Modal onClose={handleModaltoggle} />}
       <div className="container">
-        <BtnComp
-          btnTitle="Login"
-          img="./images/log-in.png"
-          onClick={handleModaltoggle}
-        />
+        
+        <div className="login-cont">
+          <BtnComp
+            btnTitle="Login"
+            img="./images/log-in.png"
+            onClick={handleModaltoggle}
+          />
+        </div>
+
         <div className="left-div">
           <div className="left-container">
             <motion.div
