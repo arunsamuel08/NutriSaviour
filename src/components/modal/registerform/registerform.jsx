@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import BtnComp from "../../button/button";
 import { auth } from "../../../firebase/firebase-config";
-import "./loginform.css";
+import "./registerform.css";
 
-function Loginform() {
+function Registerform() {
   const {
     register,
     handleSubmit,
@@ -15,8 +15,8 @@ function Loginform() {
     alert(JSON.stringify(data));
   };
 
-  const [loginEmail, setloginEmail] = useState("");
-  const [loginPassword, setloginPassword] = useState("");
+  const [registerEmail, setregisterEmail] = useState("");
+  const [registerPassword, setregisterPassword] = useState("");
 
   const registerUser = async () => {};
 
@@ -30,7 +30,7 @@ function Loginform() {
         <label>Email Address</label>
         <input
           name="email"
-          placeholder="Email ID"
+          placeholder="Enter your Email"
           {...register("email", {
             required: "Email is required",
             maxLength: 80,
@@ -68,10 +68,35 @@ function Loginform() {
         />
         {errors.password && <p>{errors.password.message}</p>}
 
-        <BtnComp btnTitle="Login" img="../../images/log-in.png" />
+        <label>Confirm Password</label>
+        <input
+          name="password"
+          placeholder="Enter Password Again"
+          type="password"
+          {...register("password", {
+            required: "You must specify a password!",
+            pattern: {
+              value:
+                "^(?=.*?[A-Z])(?=(.*[a-z]){1,})(?=(.*[d]){1,})(?=(.*[W]){    1,})(?!.*s).{8,}$",
+              message:
+                "The password should atleast contain 1 number and 1 special character!",
+            },
+            minLength: {
+              value: 8,
+              message: "Password must be more than 8 characters!",
+            },
+            maxLength: {
+              value: 20,
+              message: "Password must be less than 20 characters!",
+            },
+          })}
+        />
+        {errors.password && <p>{errors.password.message}</p>}
+
+        <BtnComp btnTitle="Register" img="../../images/log-in.png" />
       </form>
     </div>
   );
 }
 
-export default Loginform;
+export default Registerform;

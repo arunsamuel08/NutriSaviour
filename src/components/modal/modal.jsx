@@ -1,7 +1,8 @@
 import "./modal.css";
-import React from "react";
+import React, { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { auth } from "../../firebase/firebase-config";
+import Loginform from "./loginform/loginform";
+import Registerform from "./registerform/registerform";
 const Modal = props => {
   const moveUp = {
     hidden: {
@@ -29,6 +30,12 @@ const Modal = props => {
       },
     },
   };
+
+  const [signup, setsignUp] = useState(false);
+
+  const switchSignup = () => {
+    setsignUp(!signup);
+  };
   return (
     <div className="modal-bg" onClick={props.onClose}>
       <AnimatePresence mode="wait">
@@ -41,10 +48,29 @@ const Modal = props => {
           animate="visible"
         >
           <div className="modal-title">
-            <h2>Login</h2>
+            <h2>Sign In/Sign Up</h2>
             <button onClick={props.onClose}>
               <img src="./images/close.png" alt="close" />
             </button>
+          </div>
+
+          {signup ? <Loginform /> : <Registerform />}
+
+          <div className="registerUser">
+            <p>
+              {signup ? (
+                <span>Not an already existing user? Sign Up </span>
+              ) : (
+                <span>Existing user? Login by clicking </span>
+              )}
+              <button onClick={switchSignup}>Here</button>
+            </p>
+          </div>
+
+          <div className="or-div">
+            <h2>
+              <span>OR</span>
+            </h2>
           </div>
         </motion.div>
       </AnimatePresence>
