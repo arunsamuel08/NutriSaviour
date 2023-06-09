@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;500&family=Merriweather:wght@300;400;700&display=swap");
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form label {
+  font-size: 12px;
+  font-family: "Merriweather Sans", sans-serif;
+  margin: 15px 10px 10px 5px;
+}
+
+form input {
+  background-color: #e7e7e7;
+  border: none;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  font-size: 14px;
+  outline: none;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+form p {
+  width: 100%;
+  text-align: right;
+  margin: 0;
+  color: #d62246;
+  font-size: 12px;
+}
