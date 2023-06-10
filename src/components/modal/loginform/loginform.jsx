@@ -30,7 +30,7 @@ function Loginform() {
         <label>Email Address</label>
         <input
           name="email"
-          placeholder="johndoe@gmail.com"
+          placeholder="johnsam@gmail.com"
           {...register("email", {
             required: "Email is required",
             maxLength: 80,
