@@ -54,14 +54,14 @@ const Modal = props => {
             </button>
           </div>
 
-          {signup ? <Loginform /> : <Registerform />}
+          {signup ? <Registerform /> : <Loginform />}
 
           <div className="registerUser">
             <p>
               {signup ? (
-                <span>Not an already existing user? Sign Up </span>
-              ) : (
                 <span>Existing user? Login by clicking </span>
+              ) : (
+                <span>Not an already existing user? Sign Up </span>
               )}
               <button onClick={switchSignup}>Here</button>
             </p>

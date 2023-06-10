@@ -30,7 +30,7 @@ function Registerform() {
         <label>Email Address</label>
         <input
           name="email"
-          placeholder="Enter your Email"
+          placeholder="johndoe@gmail.com"
           {...register("email", {
             required: "Email is required",
             maxLength: 80,
