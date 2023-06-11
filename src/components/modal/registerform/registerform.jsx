@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useForm } from "react-hook-form";
+import { useForm, useWatch } from "react-hook-form";
 import BtnComp from "../../button/button";
 import { auth } from "../../../firebase/firebase-config";
 import "./registerform.css";
@@ -9,11 +9,16 @@ function Registerform() {
     register,
     handleSubmit,
     formState: { errors },
+    watch,
   } = useForm();
 
   const onSubmit = data => {
     alert(JSON.stringify(data));
   };
+
+  const password = watch("password", "");
+  const confpassword = watch("cnfpassword", "");
+  const passwordMatch = password === confpassword;
 
   const [registerEmail, setregisterEmail] = useState("");
   const [registerPassword, setregisterPassword] = useState("");
@@ -70,10 +75,10 @@ function Registerform() {
 
         <label>Confirm Password</label>
         <input
-          name="password"
+          name="cnfpassword"
           placeholder="Enter Password Again"
           type="password"
-          {...register("password", {
+          {...register("cnfpassword", {
             required: "You must specify a password!",
             pattern: {
               value:
@@ -91,7 +96,8 @@ function Registerform() {
             },
           })}
         />
-        {errors.password && <p>{errors.password.message}</p>}
+        {errors.cnfpassword && <p>{errors.cnfpassword.message}</p>}
+        {!passwordMatch && <p>The passwords do not match!</p>}
 
         <BtnComp btnTitle="Register" img="../../images/log-in.png" />
       </form>
