@@ -51,8 +51,7 @@ function Home() {
         const options = {
           method: "GET",
           headers: {
-            "X-RapidAPI-Key":
-              "aa7fbd4779msh469601fbb75658bp10ad88jsnf61fc939c2a6",
+            "X-RapidAPI-Key": process.env.REACT_APP_NUTRI_API_KEY,
             "X-RapidAPI-Host": "nutrition-by-api-ninjas.p.rapidapi.com",
           },
         };
@@ -98,7 +97,6 @@ function Home() {
     <div className="App">
       {openModal && <Modal onClose={handleModaltoggle} />}
       <div className="container">
-        
         <div className="login-cont">
           <BtnComp
             btnTitle="Login"

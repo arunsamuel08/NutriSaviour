@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useForm, useWatch } from "react-hook-form";
 import BtnComp from "../../button/button";
 import { auth } from "../../../firebase/firebase-config";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 import "./registerform.css";
 
 function Registerform() {
@@ -23,11 +24,18 @@ function Registerform() {
   const [registerEmail, setregisterEmail] = useState("");
   const [registerPassword, setregisterPassword] = useState("");
 
-  const registerUser = async () => {};
-
-  const loginUser = async () => {};
-
-  const logout = async () => {};
+  const registerUser = async () => {
+    try {
+      const user = await createUserWithEmailAndPassword(
+        auth,
+        registerEmail,
+        registerPassword
+      );
+      console.log(user);
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
 
   return (
     <div>
